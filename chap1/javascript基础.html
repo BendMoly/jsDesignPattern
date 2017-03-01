@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+	/**
+	 * 用对象收编变量
+	 */
+	//type 1
+	var CheckObject = {
+		checkName: function(){
+			//验证姓名
+		},
+		checkEmail: function(){
+			//验证邮箱
+		}，
+		checkPassword: function(){
+			//验证密码
+		}
+	}
+	//------->采用点语法来进行方法调用
+	//type 2
+	var CheckObject = function(){};
+	CheckObject.checkName = function(){};
+	CheckObject.checkEmail = function(){};
+	CheckObject.checkPassword = function(){};
+
+	/**
+	 * 用类创建对象
+	 */
+	//type 1
+	var CheckObject = function(){
+		this.checkName = function(){};
+		this.checkEmail = function(){};
+		this.checkPassword = function(){};
+	}
+	//将对象方法写进对象prototype原型中
+	var CheckObject = function(){};
+	CheckObject.prototype.checkName = function();	//...以此类推
+	//写入原型的另一种方式
+	CheckObject.prototype = {
+		checkName = function(){},
+		checkEmail = function(){}
+		//...
+	}
+	//在每一个方法末尾将对象返回，用this来指向对象,这样可以采用链式写法
+	var CheckObject = function(){};
+	CheckObject.prototype = {
+		checkName: function(){
+			return this;
+		}
+		checkEmail: function(){
+			return this;
+		}
+		//...
+	}
+	//eg:
+	var a = new CheckObject();
+	a.CheckObject.checkName().checkEmail();
+	
+	// 在Function对象中添加方法可以使每个函数对象都拥有此方法
+	// 但缺点在于污染了原生对象Function
+	// 因此可以抽象出一个统一添加方法的功能方法
+	Function.prototype.addMethod = function(name, fn) {
+		this[name] = fn;
+		return this;	//this指向形成链式
+	};
+	var methods = function(){};
+	methods.addMethod('checkName', function(){
+		// do something
+		return this;
+	}).addMethod('checkEmail', function(){
+		// do something
+		return this;
+	})
+	// type 2
+	var Methods = function(){};
+	Methods.addMethod('checkName', function(){
+		// do something
+	}).addMethod('checkEmail', function(){
+		// do something
+	});
+	// eg:
+	var m = new Methods();
+	m.checkEmail();
+	
+</script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-// 图片轮播类
+// 图片轮播类 
 var LoopImages = function(imgArr, container){
 	this.imagesArray = imgArr;		//轮播图片数组
 	this.container = container;		//轮播图片容器

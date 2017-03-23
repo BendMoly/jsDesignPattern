@@ -32,4 +32,4 @@ console.log(book.alikeBook);
 
 //JavaScript值类型和引用类型有哪些 
 // （1）值类型：数值、布尔值、null、undefined。 
-// （2）引用类型：对象、数组、函数。
+// （2）引用类型：对象、数组、函数。 

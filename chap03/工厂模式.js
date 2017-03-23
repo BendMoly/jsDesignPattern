@@ -1,4 +1,4 @@
-// 篮球基类
+// 篮球基类 
 var Basketball = function(){
 	this.intro = '篮球盛产于美国';
 }

@@ -1,4 +1,4 @@
-// 创建一个人类
+// 创建一个人类 
 var Human = function(param){
 	// 技能
 	this.skill = param && param.skill || '保密';

@@ -1,4 +1,4 @@
-// 外观模式实现
+// 外观模式实现 
 function addEvent(dom, type, fn){
 	// 对于支持DOM2级事件处理程序addEventListener方法的浏览器
 	if (dom.addEventListener) {

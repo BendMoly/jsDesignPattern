@@ -1,4 +1,4 @@
-// 安全模式创建工厂类
+// 安全模式创建工厂类 
 var Factory = function(type, content){
 	if (this instanceof Factiry) {
 		var s = this[type](content);

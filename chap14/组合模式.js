@@ -1,4 +1,4 @@
-// 新闻虚拟类
+// 新闻虚拟类 
 var News = function(){
     // 子组件容器
     this.children = [];
